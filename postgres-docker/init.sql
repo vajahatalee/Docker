@@ -1,1 +1,1 @@
-CREATE SCHEMA tenant_demo;
+CREATE SCHEMA peoplex;

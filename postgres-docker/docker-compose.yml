@@ -1,5 +1,6 @@
-postgres:
+fpostgres-peoplex:
         image: postgres:10-alpine
+        restart: always
         ports:
           - '5432:5432'
         environment:
@@ -7,4 +8,14 @@ postgres:
             POSTGRES_PASSWORD: 'postgres'
             POSTGRES_DB: 'peoplex'
         volumes:
-           - ./init:/var/lib/postgresql/data
+           - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+adminer:
+        image: adminer
+        restart: always
+        ports:
+          - 8081:8081
+        
+
+
+
+
